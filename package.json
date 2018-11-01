@@ -1,0 +1,56 @@
+{
+  "name": "codeworks-redux-intro-exercise",
+  "version": "1.0.0",
+  "description": "A Codeworks exercise to train students",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "precommit": "gulp lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codeworksbcn/redux-intro-exercise.git"
+  },
+  "author": "Codeworks",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/codeworksbcn/redux-intro-exercise/issues"
+  },
+  "homepage": "https://github.com/codeworksbcn/redux-intro-exercise#readme",
+  "private": true,
+  "devDependencies": {
+    "chai": "4.2.0",
+    "cz-changelog": "1.0.1",
+    "del": "3.0.0",
+    "eslint": "5.6.0",
+    "eslint-plugin-json": "1.2.1",
+    "eslint-plugin-react": "7.11.1",
+    "gulp": "3.9.1",
+    "gulp-eslint": "5.0.0",
+    "gulp-load-plugins": "1.5.0",
+    "gulp-replace": "1.0.0",
+    "husky": "1.1.2",
+    "mocha": "5.2.0"
+  },
+  "dependencies": {
+    "react": "16.6.0",
+    "react-dom": "16.6.0",
+    "react-redux": "5.1.0",
+    "react-scripts": "2.1.1",
+    "redux": "4.0.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-changelog"
+    }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
