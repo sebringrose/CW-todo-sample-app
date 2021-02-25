@@ -1,4 +1,5 @@
 # Redux intro
+
 Time to learn how to use Redux to manage your app state, and how to integrate Redux with React!
 
 You can think of Redux as a client-side database that contains all the data required to generate your views. This can feel a bit as an overkill for a small app, but becomes useful as your app scales.
@@ -6,6 +7,7 @@ You can think of Redux as a client-side database that contains all the data requ
 ## Learning objectives
 
 While you are going through the exercise, keep in mind the following learning objectives. If by the end you don’t feel you have accomplished these objectives, please reach out to an instructor or TA.
+
 1. Understand and use Redux components: Actions, Store, Reducers, State.
 2. Handle async actions with and without middleware.
 3. Integrate React with Redux.
@@ -21,12 +23,23 @@ While you are going through the exercise, keep in mind the following learning ob
 
 Follow best practices such as commenting your code, committing often and being mindful of indentation. Make sure to lint your code before committing, as this will help your work look professional.
 
+There are two approaches for this exercise:
+
+- You can work on the `master` branch and use the [`connect()` method](https://react-redux.js.org/api/connect).
+- Alternatively, you can switch to the `hooks` branch (`$ git checkout hooks`) and use the [hooks method](https://react-redux.js.org/api/hooks).
+
+Both of them are common in redux implementations. After having a look at the documentation, choose the one in which you feel more comfortable.
+
+In either approach you should:
+
 1. **Build a counter**.
-    - It needs to have two buttons (`+` and `-`), that respectively increase and decrease the counter by one.
-    - A text field should display the up-to-date count.
+   - It needs to have two buttons (`+` and `-`), that respectively increase and decrease the counter by one.
+   - A text field should display the up-to-date count.
 2. **Build a to-do app**.
-    - It has a text input field with a button for adding a task.
-    - It shows an up-to-date list of all the tasks.
+   - It has a text input field with a button for adding a task.
+   - It shows an up-to-date list of all the tasks.
 
 ## Extra credits
-Add a “completed task” feature so you can cross off items once they have been completed.
+
+- Add a “completed task” feature so you can cross off items once they have been completed.
+- Refactor from one approach to the other one to get some more practice with the different implementations of redux.

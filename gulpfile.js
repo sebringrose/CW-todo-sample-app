@@ -1,6 +1,5 @@
-
-const gulp = require('gulp');
-const fs = require('fs');
+const { src, dest, series } = require('gulp');
+const { writeFile } = require('fs/promises');
 const del = require('del');
 const $ = require('gulp-load-plugins')();
 
@@ -13,29 +12,46 @@ function addDefSrcIgnore (srcArr) {
     '!private{,/**}',
     '!dist{,/**}',
     '!.git{,/**}',
-    '!**/.DS_Store'
+    '!**/.DS_Store',
   ]);
 }
 
 // JavaScript and JSON linter
-gulp.task('lint', function () {
-  return gulp.src(addDefSrcIgnore(['**/*.js', '*.json']), {dot: true})
-    .pipe($.eslint({dotfiles: true}))
+const lint = () => {
+  return src(addDefSrcIgnore(['**/*.js', '*.json']), { dot: true })
+    .pipe($.eslint({ dotfiles: true }))
     .pipe($.eslint.format())
     .pipe($.eslint.failAfterError());
-});
+};
+
+// Clean previous build
+const clean = async () => {
+  try {
+    await del('dist');
+  } catch (err) {
+    console.error(err); //eslint-disable-line no-console
+  }
+};
 
 // Remove solutions from exercises
-gulp.task('remove-solutions', ['lint'], function () {
-  del.sync('dist');
-  return gulp.src(addDefSrcIgnore(['**']), {dot: true})
-    .pipe($.replace(/^\s*(\/\/|<!--|\/\*)\s*REMOVE-START[\s\S]*?REMOVE-END\s*(\*\/|-->)?\s*$/gm, ''))
-    .pipe(gulp.dest('dist'));
-});
+const removeSolutions = () => {
+  return src(addDefSrcIgnore(['**']), { dot: true })
+    .pipe(
+      $.replace(/^\s*(\/\/|<!--|\/\*)\s*REMOVE-START[\s\S]*?REMOVE-END\s*(\*\/|-->)?\s*$/gm, '')
+    )
+    .pipe(dest('dist'));
+};
 
 // Prepare for distribution to students
-gulp.task('dist', ['remove-solutions'], function () {
-  let npmConfig = require('./package.json');
-  npmConfig = JSON.stringify(npmConfig, null, 2).replace(/-master/g, '');
-  fs.writeFileSync('dist/package.json', npmConfig);
-});
+const removeMaster = async () => {
+  try {
+    let npmConfig = require('./package.json');
+    npmConfig = JSON.stringify(npmConfig, null, 2).replace(/-master/g, '');
+    await writeFile('dist/package.json', npmConfig);
+  } catch (err) {
+    console.error(err); //eslint-disable-line no-console
+  }
+};
+
+exports.lint = lint;
+exports.dist = series(lint, clean, removeSolutions, removeMaster);
