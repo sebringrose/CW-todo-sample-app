@@ -1,15 +1,13 @@
 {
   "name": "codeworks-redux-intro-exercise",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A Codeworks exercise to train students",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "install": "cd client && npm i .",
-    "lint": "cd client && ng lint"
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -20,7 +18,6 @@
   "bugs": {
     "url": "https://github.com/codeworksbcn/redux-intro-exercise/issues"
   },
-  "homepage": "https://github.com/codeworksbcn/redux-intro-exercise#readme",
   "private": true,
   "devDependencies": {
     "chai": "^4.3.4",

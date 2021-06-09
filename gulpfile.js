@@ -35,8 +35,6 @@ function removeSolutions () {
 // Prepare for distribution to students
 function updateConfigForSlave (done) {
   let npmConfig = require('./package.json');
-  npmConfig.scripts.install = 'cd client && npm i .';
-  npmConfig.scripts.lint = 'cd client && ng lint';
   npmConfig.husky = {
     'hooks': {
       'pre-commit': 'npm run lint'
