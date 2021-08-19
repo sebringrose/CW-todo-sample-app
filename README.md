@@ -15,9 +15,10 @@ While you are going through the exercise, keep in mind the following learning ob
 ## Getting started
 
 1. Install the [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd).
-2. Run `npm i` to install the local dependencies.
-3. Run the tests using `npm test`. These tests have a watcher that automatically re-runs them on any file change. You can work on the action creators and reducers by looking at the tests only.
-4. Once both action creators and reducers are done, run your server with `npm start` and implement the interface requirements.
+2. Run `npm i` in the root folder to install the local dependencies.
+3. `cd` into either the `classes` folder or the `hooks` folder, depending on the approach you choose, and run `npm i` again.
+4. Run the tests using `npm test`. These tests have a watcher that automatically re-runs them on any file change. You can work on the action creators and reducers by looking at the tests only.
+5. Once both action creators and reducers are done, run your server with `npm start` and implement the interface requirements.
 
 ## Tasks
 
@@ -25,8 +26,8 @@ Follow best practices such as commenting your code, committing often and being m
 
 There are two approaches for this exercise:
 
-- You can work on the `master` branch and use the [`connect()` method](https://react-redux.js.org/api/connect).
-- Alternatively, you can switch to the `hooks` branch (`$ git checkout hooks`) and use the [hooks method](https://react-redux.js.org/api/hooks).
+- You can work in the `classes` folder and use the [`connect()` method](https://react-redux.js.org/api/connect).
+- Alternatively, you can work from the `hooks` folder and use the [hooks method](https://react-redux.js.org/api/hooks).
 
 Both of them are common in redux implementations. After having a look at the documentation, choose the one in which you feel more comfortable.
 
