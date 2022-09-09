@@ -13,4 +13,6 @@ app.use(serve(conf.clientPath));
 app.use(bodyParser());
 app.use(router.routes());
 
-app.listen(conf.port, () => console.log(`Server listening on port ${port}`));
+app.listen(conf.port, () => {
+  console.log(`Server listening on port ${conf.port}`)
+});

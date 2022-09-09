@@ -1,6 +1,8 @@
-module.exports = {
-  clientPath: __dirname + '../client',
+const config = {
+  clientPath: '../client',
   dbUrl: 'mongodb://localhost:27017',
-  dbName: 'tested-todo',
+  dbName: 'testing-todos',
   port: 3000
 };
+
+export default config;

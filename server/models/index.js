@@ -1,5 +1,5 @@
 import { MongoClient } from 'mongodb';
-import conf from '../config';
+import conf from '../config.js';
 
 const client = new MongoClient(conf.dbUrl);
 

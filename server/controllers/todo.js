@@ -1,10 +1,10 @@
 'use strict';
 
-import todos from '../models/message.js';
+import * as todos from '../models/todo.js';
 
 export const getAll = async ctx => {
   try {
-    ctx.body = await todos.getAll();
+    ctx.body = await todos.find();
   } catch (e) {
     ctx.status = 500;
   }

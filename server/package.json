@@ -1,7 +1,6 @@
 {
-  "name": "tested-todo-server",
+  "name": "testing-todos-server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "type": "module",
   "author": "Codeworks",
