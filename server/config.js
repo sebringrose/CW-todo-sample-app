@@ -1,8 +1,8 @@
 const config = {
-  clientPath: '../client',
+  // clientPath: '../client',
   dbUrl: 'mongodb://localhost:27017',
   dbName: 'testing-todos',
-  port: 3000
+  port: 4000
 };
 
 export default config;
