@@ -44,14 +44,13 @@ export const putTodo = async (todo) => {
 
 export const deleteTodo = async (todo) => {
   try {
-    const response = await fetch(`${API}/todos`, {
+    return await fetch(`${API}/todos`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(todo)
     })
-    return await response.json();
   } catch (e) {
     console.log(e);
     return todo;

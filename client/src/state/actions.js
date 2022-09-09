@@ -46,10 +46,10 @@ export const unCompleteTodo = async (dispatch, todo) => {
 
 export const removeTodo = async (dispatch, todo) => {
   dispatch({ type: 'LOADING_TRUE' });
-  const data = await deleteTodo(todo);
+  await deleteTodo(todo);
   dispatch({ type: 'LOADING_FALSE' });
   return dispatch({
     type: 'REMOVE_TODO',
-    payload: data
+    payload: todo
   });
 };
