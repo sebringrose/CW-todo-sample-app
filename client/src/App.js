@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { loadTodos } from './state/actions.js';
@@ -10,8 +10,6 @@ import StatusBar from './components/StatusBar.js';
 const App = () => {
   const todos = useSelector(state => state.todos);
   const dispatch = useDispatch();
-
-  const [newTodoText, SetNewToDoText] = useState("");
 
   useEffect(() => {
     loadTodos(dispatch);

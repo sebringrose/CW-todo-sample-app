@@ -53,6 +53,6 @@ export const deleteTodo = async (todo) => {
     })
   } catch (e) {
     console.log(e);
-    return todo;
+    return null;
   }
 }
