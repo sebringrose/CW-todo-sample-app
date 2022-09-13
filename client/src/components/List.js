@@ -19,9 +19,6 @@ const List = ({ todos, completed }) => {
         />
       </span>
       {todo.text}
-      {completed && <span>
-        <button onClick={() => removeTodo(dispatch, todo)}>REMOVE</button>
-      </span>}
     </h2>)}
   </div>;
 };
