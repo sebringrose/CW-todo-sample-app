@@ -7,7 +7,8 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node server.js",
+    "start-dev": "nodemon server.js"
   },
   "dependencies": {
     "@koa/cors": "^3.4.1",
@@ -15,5 +16,8 @@
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^10.0.0",
     "mongodb": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
