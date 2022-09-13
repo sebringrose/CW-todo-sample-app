@@ -1,7 +1,4 @@
-import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-
-import { putTodo, deleteTodo } from '../api-client.js'
 import { removeTodo, completeTodo, unCompleteTodo } from '../state/actions';
 
 const List = ({ todos, completed }) => {
