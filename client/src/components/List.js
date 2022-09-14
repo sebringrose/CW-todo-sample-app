@@ -1,16 +1,19 @@
-import { useDispatch } from 'react-redux';
-import { removeTodo, completeTodo, unCompleteTodo } from '../state/actions';
+import { useDispatch, useSelector } from 'react-redux';
+import { completeTodo, unCompleteTodo } from '../state/actions';
 
-const List = ({ todos, completed }) => {
+const List = ({ completed }) => {
   const dispatch = useDispatch();
+  const todos = useSelector(state => state.todos);
+
   if (!todos[0]) return null;
 
   return <div style={{ marginBottom: '50px' }}>
     <h2>{!completed ? 'To do:' : 'Completed:'}</h2>
-    {todos.map(todo => <h2 key={todo.id}>
+    {todos.filter(todo => !completed ? !todo.completed : todo.completed).map(todo => <h2 key={todo.id}>
       <span>
         <input 
-          type='checkbox' 
+          type='checkbox'
+          role='checkbox'
           defaultChecked={completed}
           onClick={() => !completed 
             ? completeTodo(dispatch, todo) 
@@ -19,6 +22,7 @@ const List = ({ todos, completed }) => {
         />
       </span>
       {todo.text}
+      {completed && <button role="button">Remove Todo</button>}
     </h2>)}
   </div>;
 };

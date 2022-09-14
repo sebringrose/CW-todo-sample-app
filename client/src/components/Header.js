@@ -15,11 +15,15 @@ const Header = () => {
     }}>
       <h1>Testing Todos</h1>
       <span>
-        <input 
-          type="text" 
-          value={newTodoText}
-          onChange={(e) => setNewToDoText(e.target.value)} 
-        />
+        <label>
+          add todo:&nbsp;
+          <input 
+            type="text" 
+            value={newTodoText}
+            onChange={(e) => setNewToDoText(e.target.value)} 
+          />
+        </label>
+
         <button onClick={() => {
           addTodo(dispatch, newTodoText);
           setNewToDoText("");

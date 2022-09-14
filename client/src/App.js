@@ -22,8 +22,8 @@ const App = () => {
   return <div style={{ maxWidth: '800px', margin: 'auto' }}>
     <Header />
     <StatusBar />
-    <List todos={todos.filter(todo => !todo.completed)} completed={false} />
-    <List todos={todos.filter(todo => todo.completed)} completed={true} />
+    <List />
+    <List completed={true} />
   </div>;
 };
 
