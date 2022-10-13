@@ -1,5 +1,5 @@
 {
-  "name": "testing-todos-server",
+  "name": "cw-todo-sample-server",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
@@ -8,7 +8,7 @@
   "private": true,
   "scripts": {
     "start": "node index.js",
-    "start-dev": "nodemon index.js",
+    "start:dev": "nodemon index.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest"
   },
   "dependencies": {

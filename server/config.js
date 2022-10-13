@@ -5,7 +5,7 @@ const config = {
 
   dbName: process.env.DB_NAME 
     ? process.env.DB_NAME
-    :'testing-todos',
+    :'cw-todo-sample-app',
 
   port: process.env.PORT 
     ? process.env.PORT
