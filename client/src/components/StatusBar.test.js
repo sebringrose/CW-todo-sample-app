@@ -6,12 +6,6 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../state/reducers';
 
-const testTodo = {
-  id: 'test-todo-0', 
-  text: 'This is a test ToDo', 
-  completed: false
-};
-
 describe('StatusBar component', () => {
   test('Shows "Status: Loaded" by default and "Status: Loading..." on loading state true', async () => {
     // ARRANGE
