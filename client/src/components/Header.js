@@ -13,10 +13,10 @@ const Header = () => {
       justifyContent: 'space-between',
       alignItems: 'center'
     }}>
-      <h1>Testing Todos</h1>
+      <h1>Sample Todo App</h1>
       <span>
         <label>
-          add todo:&nbsp;
+          New Todo:&nbsp;
           <input 
             type="text" 
             value={newTodoText}
