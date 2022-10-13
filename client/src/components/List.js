@@ -23,7 +23,7 @@ const List = ({ completed }) => {
           : unCompleteTodo(dispatch, todo)
         }
       />
-      <h2>&nbsp;{todo.text}&nbsp;</h2>
+      <h3>&nbsp;{todo.text}&nbsp;</h3>
       {completed && <button role="button" onClick={() => removeTodo(dispatch, todo)}>
         Remove
       </button>}
