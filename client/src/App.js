@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { getTodos } from './api-client.js';
+
 import Header from './components/Header.js';
 import List from './components/List.js';
 import StatusBar from './components/StatusBar.js';
