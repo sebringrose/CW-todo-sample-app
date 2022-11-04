@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { loadTodos } from './state/actions.js';
-
 import Header from './components/Header.js';
 import List from './components/List.js';
 import StatusBar from './components/StatusBar.js';
@@ -12,7 +10,15 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    loadTodos(dispatch);
+    (async function() {
+      dispatch({ type: 'LOADING_TRUE' });
+      const data = await getTodos();
+      dispatch({ type: 'LOADING_FALSE' });
+      return await Promise.all(data.map(todo => dispatch({
+        type: 'ADD_TODO',
+        payload: todo
+      })));
+    })()
   }, []);
 
   useEffect(() => {
