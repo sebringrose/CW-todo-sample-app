@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { getTodos } from './api-client.js';
+import { loadTodos } from './state/actions';
 
 import Header from './components/Header.js';
 import List from './components/List.js';
@@ -12,15 +12,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async function() {
-      dispatch({ type: 'LOADING_TRUE' });
-      const data = await getTodos();
-      dispatch({ type: 'LOADING_FALSE' });
-      return await Promise.all(data.map(todo => dispatch({
-        type: 'ADD_TODO',
-        payload: todo
-      })));
-    })()
+    loadTodos(dispatch);
   }, []);
 
   useEffect(() => {

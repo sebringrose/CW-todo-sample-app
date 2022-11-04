@@ -1,6 +1,16 @@
 import { getTodos, postTodo, putTodo, deleteTodo } from '../api-client.js';
 import { v4 as uuidv4 } from 'uuid';
 
+export const loadTodos = async (dispatch) => {
+  dispatch({ type: 'LOADING_TRUE' });
+  const data = await getTodos();
+  dispatch({ type: 'LOADING_FALSE' });
+  return await Promise.all(data.map(todo => dispatch({
+    type: 'ADD_TODO',
+    payload: todo
+  })));
+};
+
 export const addTodo = async (dispatch, todoText) => {
   dispatch({ type: 'LOADING_TRUE' });
   const todo = { id: uuidv4(), text: todoText, completed: false };
