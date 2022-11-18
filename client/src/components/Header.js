@@ -24,7 +24,7 @@ const Header = () => {
           />
         </label>
 
-        <button onClick={() => {
+        <button id="add" onClick={() => {
           addTodo(dispatch, newTodoText);
           setNewToDoText("");
         }}>ADD</button>
