@@ -1,7 +1,7 @@
 import { MongoClient, ServerApiVersion } from 'mongodb';
 import conf from '../config.js';
 
-const uri = "mongodb+srv://admin:admin123@cw-todo-sample-app.tikr14v.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb://localhost:27017";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 // const client = new MongoClient(conf.dbUrl, { 
