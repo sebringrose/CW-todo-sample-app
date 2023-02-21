@@ -12,6 +12,4 @@ const config = {
     : 4000
 };
 
-console.log(config);
-
 export default config;
