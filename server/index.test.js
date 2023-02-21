@@ -15,6 +15,14 @@ describe('Test GET todos', () => {
   });
 });
 
+describe('Test GET welcome', () => {
+  test('It should respond 200 with welcome text', async () => {
+    const response = await request(app).get('/welcome');
+    expect(response.statusCode).toBe(200);
+    expect(response.text.includes("Welcome to our app!"));
+  });
+});
+
 describe('Test POST todos', () => {
   test('It should respond 201 with added Todo object', async () => {
     const response = await request(app).post('/todos').send(testTodo);
