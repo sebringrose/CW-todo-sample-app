@@ -1,7 +1,7 @@
 const config = {
   dbUrl: process.env.DB_URL 
     ? process.env.DB_URL
-    : 'http://localhost:27017',
+    : 'mongodb://localhost:27017',
 
   dbName: process.env.DB_NAME 
     ? process.env.DB_NAME
@@ -11,5 +11,7 @@ const config = {
     ? process.env.PORT
     : 4000
 };
+
+console.log(config);
 
 export default config;
