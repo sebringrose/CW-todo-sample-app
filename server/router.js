@@ -9,4 +9,6 @@ router.post('/todos', todo.post);
 router.put('/todos', todo.put);
 router.delete('/todos', todo.deleteOne);
 
+router.get('/welcome', (ctx) => ctx.body = "Welcome to our app!");
+
 export default router;
