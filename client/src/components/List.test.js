@@ -58,6 +58,7 @@ describe('List component', () => {
 
     // ASSERT
     expect(screen.getByText(testTodo.text)).toBeInTheDocument();
+    
     // ACT
     await userEvent.click(screen.getByRole('checkbox'));
     await new Promise(res => setTimeout(res, 100));
@@ -85,7 +86,7 @@ describe('List component', () => {
     expect(screen.getByText(testTodo.text));
   
     // ACT
-    await userEvent.click(screen.getByText('Remove Todo'));
+    await userEvent.click(screen.getByText('Remove'));
     await new Promise(res => setTimeout(res, 100));
   
     // ASSERT

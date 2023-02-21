@@ -25,7 +25,7 @@ describe('App component', () => {
   render(app);
 
   test('renders Header, StatusBar and Lists', async () => {
-    expect(screen.getByText('Testing Todos')).toBeInTheDocument();
+    expect(screen.getByText('Sample Todo App')).toBeInTheDocument();
     expect(screen.getByText('Status: Loading...')).toBeInTheDocument();
     expect(screen.getByText('This is a test ToDo')).toBeInTheDocument();
     expect(screen.getByText('This is another test ToDo')).toBeInTheDocument();
