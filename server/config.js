@@ -1,7 +1,7 @@
 const config = {
   dbUrl: process.env.DB_URL 
     ? process.env.DB_URL
-    : 'mongodb+srv://admin:admin123@cw-todo-sample-app.tikr14v.mongodb.net/?retryWrites=true&w=majority',
+    : 'mongodb://localhost:27017',
 
   dbName: process.env.DB_NAME 
     ? process.env.DB_NAME

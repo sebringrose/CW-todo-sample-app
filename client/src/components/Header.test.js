@@ -20,12 +20,12 @@ describe('Header component', () => {
     render(header);
   
     // ACT
-    await userEvent.type(screen.getByLabelText('add todo:'), testTodo.text);
+    await userEvent.type(screen.getByLabelText('New Todo:'), testTodo.text);
     await userEvent.click(screen.getByText('ADD'));
     await new Promise(res => setTimeout(res, 100));
   
     // ASSERT
-    expect(screen.getByText('Testing Todos')).toBeInTheDocument();
+    expect(screen.getByText('Sample Todo App')).toBeInTheDocument();
     expect(header.props.store.getState().todos[0].text).toEqual(testTodo.text);
   });
 });
